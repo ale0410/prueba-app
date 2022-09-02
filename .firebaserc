@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "ppspruebaapp"
+  },
+  "targets": {
+    "ppspruebaapp": {
+      "hosting": {
+        "app": [
+          "ppspruebaapp"
+        ]
+      }
+    }
+  }
+}
