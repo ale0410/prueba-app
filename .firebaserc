@@ -1,12 +1,19 @@
 {
   "projects": {
-    "default": "ppspruebaapp"
+    "default": "pruebaapp-60bab"
   },
   "targets": {
-    "ppspruebaapp": {
+    "pruebaapp": {
       "hosting": {
         "app": [
-          "ppspruebaapp"
+          "pruebaapp"
+        ]
+      }
+    },
+    "pruebaapp-60bab": {
+      "hosting": {
+        "app": [
+          "pruebaapp-60bab"
         ]
       }
     }

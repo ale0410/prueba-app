@@ -148,11 +148,8 @@
         "deploy": {
           "builder": "@angular/fire:deploy",
           "options": {
-            "prerender": false,
-            "ssr": false,
-            "browserTarget": "app:build:production",
-            "firebaseProject": "ppspruebaapp",
-            "firebaseHostingSite": "ppspruebaapp"
+            "version": 2,
+            "browserTarget": "app:build:production"
           }
         }
       }

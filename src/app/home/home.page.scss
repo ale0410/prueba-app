@@ -4,8 +4,11 @@
     position: absolute;
     left: 0;
     right: 0;
-    top: 20%;
+    top: 50%;
     transform: translateY(-50%);
+    background-color: rgb(223, 159, 41);
+    background-image: url("../../assets/burger.webp");
+    padding: 380px 40px;
   }
   
   #container strong {
@@ -23,3 +26,12 @@
   #container a {
     text-decoration: none;
   }
+
+#header{
+  background-color: rgb(58, 38, 2);
+  padding: 5px;
+}
+
+ion-button{
+  height: 200px;
+}

@@ -1,4 +1,14 @@
-export interface User {
+/**
+ * formato de usuario para guardar en base de datos
+ */
+interface User {
     email: string;
-    password: string;
-}
+    username: string;
+    createdAt: string;
+  }
+  
+  export const userDb: User = {
+    email: '',
+    username: '',
+    createdAt: '',
+  };

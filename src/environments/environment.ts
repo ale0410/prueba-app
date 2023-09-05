@@ -4,12 +4,13 @@
 
 export const environment = {
   firebase: {
-    projectId: 'ppspruebaapp',
-    appId: '1:644160620081:web:0ad5e4406cb2cf25d6f710',
-    storageBucket: 'ppspruebaapp.appspot.com',
-    apiKey: 'AIzaSyBTe-D-PBlyfvKjS6P7tyMJMemjzDe2a_E',
-    authDomain: 'ppspruebaapp.firebaseapp.com',
-    messagingSenderId: '644160620081',
+    projectId: 'pruebaapp-60bab',
+    appId: '1:785392815278:web:df7560d503f4d0f0cdf13f',
+    storageBucket: 'pruebaapp-60bab.appspot.com',
+    apiKey: 'AIzaSyA_APEorIBGhUfh9wrYL0luEo5-9lqiIPA',
+    authDomain: 'pruebaapp-60bab.firebaseapp.com',
+    messagingSenderId: '785392815278',
+    measurementId: 'G-5EG9T7ZMMG',
   },
   production: false
 };

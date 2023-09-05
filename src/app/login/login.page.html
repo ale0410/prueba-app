@@ -1,33 +1,86 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>Login</ion-title>
-  </ion-toolbar>
-</ion-header>
+<!--Aplicarles estilos a todos los inputs, botones de acceso rapido que no sean textos sino botones -->
 
 <ion-content>
-  <form>
-    <ion-item lines="full">
-      <ion-label position="floating">Usuario</ion-label>
-      <ion-input type="text" #email required></ion-input>
-    </ion-item>
-    <ion-item lines="full">
-      <ion-label position="floating">Contraseña</ion-label>
-      <ion-input type="password" #password required></ion-input>
-    </ion-item>
-    <ion-row>
-      <ion-col>
-        <ion-button type="submit" (click)="onLogin(email, password)" expand="block">Login</ion-button>
-      </ion-col>
-    </ion-row>
-    <p class="ion-text-center">
-      <a id="errorLogin" *ngIf="errorLogin"> Por favor ingrese los datos correctamente </a>
-    </p>
-  </form>
-  <ion-row>
-    <ion-col>
-      <p class="ion-text-center">
-        <a routerLink="/register"> No tenes cuenta? Creala aqui </a>
-      </p>
-    </ion-col>
-  </ion-row>
+
+  <div id="idFound">
+    <div *ngIf="spinner">
+      spinnerr
+    </div>
+    <div *ngIf="error">
+      {{error}}
+    </div>
+  
+    <form *ngIf="!spinner" #loginForm="ngForm" novalidate>
+      <div id="idForm">
+        <ion-list>
+  
+          <ion-item>
+            <ion-label position="stacked" color="primary">Mail</ion-label>
+            <ion-input [(ngModel)]="login.email" name="email" type="text" #mail="ngModel" spellcheck="false"
+              autocapitalize="off" required>
+            </ion-input> 
+          </ion-item>
+          <ion-text color="danger">
+            <p [hidden]="mail.valid || submitted === false" class="ion-padding-start">
+              Por favor, ingrese su Correo Electrónico.
+            </p>
+          </ion-text>
+    
+          <ion-item>
+            <ion-label position="stacked" color="primary">Contraseña</ion-label>
+            <ion-input [(ngModel)]="pass" name="password" type="password" #password="ngModel" minlength=6 required>
+            </ion-input>
+          </ion-item>
+          <ion-text color="danger">
+            <p [hidden]="!password.errors || submitted === false" class="ion-padding-start">
+              La contraseña ingresada es muy corta.
+            </p>
+          </ion-text>
+          <ion-text color="danger">
+            <p [hidden]="!password.errors || submitted === false" class="ion-padding-start">
+              Por favor, ingrese una contraseña.
+            </p>
+          </ion-text>
+    
+        </ion-list>
+    
+        <ion-row>
+          <ion-col>
+            <ion-button (click)="onLogin(loginForm)" type="submit" expand="block">Ingresar</ion-button>
+          </ion-col>
+        </ion-row>
+
+        <ion-fab vertical="center" horizontal="end" slot="fixed">
+          <ion-fab-button>
+            <ion-icon name="chevron-forward"></ion-icon>
+          </ion-fab-button>
+          <ion-fab-list side="bottom">
+            Admin
+            <ion-fab-button>
+              <ion-icon name="person" (click)="admin()"></ion-icon>
+            </ion-fab-button>
+            Invitado
+            <ion-fab-button>
+              <ion-icon name="person" (click)="invitado()"></ion-icon>
+            </ion-fab-button>
+            Usuario
+            <ion-fab-button>
+              <ion-icon name="person" (click)="usuario()"></ion-icon>
+            </ion-fab-button>
+            Anonimo
+            <ion-fab-button>
+              <ion-icon name="person" (click)="anonimo()"></ion-icon>
+            </ion-fab-button>
+            Tester
+            <ion-fab-button>
+              <ion-icon name="person" (click)="tester()"></ion-icon>
+            </ion-fab-button>
+          </ion-fab-list>
+        </ion-fab>
+
+      </div> 
+    </form>
+  </div>
+
+  
 </ion-content>
